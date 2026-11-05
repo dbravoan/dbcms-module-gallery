@@ -1,0 +1,25 @@
+{
+    "author": "dbCMS Core Team",
+    "settings": {
+        "slug_default": {
+            "type": "text",
+            "label": "Slug base de la Galería",
+            "description": "Ruta raíz por defecto para acceder a las galerías (por ejemplo: galeria o galerias)",
+            "default": "galeria",
+            "placeholder": "galeria"
+        },
+        "slug_{locale}": {
+            "label": "Slug de la Galería en {language} ({locale})",
+            "description": "Ruta personalizada para el idioma {language}. Si se deja vacío, se usa el slug base.",
+            "default": "galeria",
+            "placeholder": "galeria",
+            "defaults": {
+                "es": "galeria",
+                "en": "gallery",
+                "ca": "galeria",
+                "fr": "galerie",
+                "de": "galerie"
+            }
+        }
+    }
+}

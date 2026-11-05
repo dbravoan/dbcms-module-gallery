@@ -1,0 +1,28 @@
+{
+    "name": "dbravoan/dbcms-module-gallery",
+    "type": "dbcms-module",
+    "description": "Filterable image galleries, WebP optimization, and lightbox support",
+    "license": "MIT",
+    "require": {
+        "dbravoan/dbcms-core": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DbCms\\Modules\\Gallery\\": "./"
+        }
+    },
+    "extra": {
+        "dbcms": {
+            "name": "Media Gallery",
+            "identifier": "gallery",
+            "author": "dbCMS Core Team",
+            "description": "Filterable image galleries, WebP optimization, and lightbox support",
+            "provider": "DbCms\\Modules\\Gallery\\GalleryModuleServiceProvider",
+            "is_pageable": true,
+            "repository": "https://github.com/dbravoan/dbcms-module-gallery",
+            "morphs": {
+                "gallery": "DbCms\\Modules\\Gallery\\Models\\Gallery"
+            }
+        }
+    }
+}
