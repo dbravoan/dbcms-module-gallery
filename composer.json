@@ -1,0 +1,68 @@
+{
+    "name": "dbravoan/dbcms-module-gallery",
+    "type": "dbcms-module",
+    "description": "Álbumes editoriales con páginas públicas, traducciones y publicación propias; reutiliza la biblioteca multimedia del núcleo.",
+    "license": "MIT",
+    "require": {
+        "dbravoan/dbcms-core": "~0.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "DbCms\\Modules\\Gallery\\": "./"
+        }
+    },
+    "extra": {
+        "dbcms": {
+            "name": "Álbumes públicos",
+            "identifier": "gallery",
+            "author": "dbCMS Core Team",
+            "description": "Filterable image galleries, WebP optimization, and lightbox support",
+            "provider": "DbCms\\Modules\\Gallery\\GalleryModuleServiceProvider",
+            "is_pageable": true,
+            "repository": "https://github.com/dbravoan/dbcms-module-gallery",
+            "morphs": {
+                "gallery": "DbCms\\Modules\\Gallery\\Models\\Gallery"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "fixture:lock": "@php tooling/package.php fixture:lock",
+        "prepare": "@php tooling/package.php prepare",
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php tooling/package.php test"
+        ],
+        "check": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php tooling/package.php check"
+        ],
+        "test:dist": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php tooling/package.php test:dist"
+        ],
+        "profiles": "@php tooling/package.php profiles"
+    },
+    "archive": {
+        "exclude": [
+            "/.build",
+            "/.github",
+            "/.gitignore",
+            "/.gitattributes",
+            "/tests",
+            "/tooling",
+            "/docker",
+            "/AGENTS.md",
+            "/compose.yaml",
+            "/pint.json",
+            "/phpunit.xml",
+            "/.node-version",
+            "/.dockerignore",
+            "/.env",
+            "/.env.*",
+            "/node_modules",
+            "/vendor"
+        ]
+    }
+}
